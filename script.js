@@ -64,3 +64,92 @@ function showMoreWishes() {
         button.textContent = "Xem Video Chúc Mừng";
     }
 }
+
+let lastHeartX = 0; // Vị trí X cuối cùng tạo trái tim
+let lastHeartY = 0; // Vị trí Y cuối cùng tạo trái tim
+const minDistance = 50; // Khoảng cách tối thiểu để tạo trái tim mới
+
+document.addEventListener("mousemove", (event) => {
+    const currentX = event.pageX;
+    const currentY = event.pageY;
+
+    // Tính khoảng cách giữa vị trí hiện tại và vị trí cuối cùng tạo trái tim
+    const distance = Math.sqrt((currentX - lastHeartX) ** 2 + (currentY - lastHeartY) ** 2);
+
+    if (distance >= minDistance) {
+        // Cập nhật vị trí cuối cùng tạo trái tim
+        lastHeartX = currentX;
+        lastHeartY = currentY;
+        // Tạo phần tử img cho hình trái tim
+        const heart = document.createElement("img");
+        heart.src = "heart.png"; // Đường dẫn đến hình ảnh trái tim của bạn
+        heart.classList.add("heart");
+
+        heart.style.left = `${currentX}px`;
+        heart.style.top = `${currentY}px`;
+
+        document.body.appendChild(heart);
+
+        // Xóa trái tim khỏi DOM sau khi hoạt ảnh kết thúc
+        heart.addEventListener("animationend", () => {
+            heart.remove();
+        });
+    }
+});
+
+const music = document.getElementById("background-music");
+const toggleButton = document.getElementById("music-toggle-button");
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        toggleButton.textContent = "🔊";
+    } else {
+        music.pause();
+        toggleButton.textContent = "🔈";
+    }
+}
+
+// Phát nhạc khi người dùng lần đầu nhấn vào bất kỳ đâu trên trang (nếu cần)
+window.addEventListener('click', () => {
+    if (music.paused) {
+        music.play();
+        toggleButton.textContent = "🔊";
+    }
+}, { once: true });
+
+const textElement = document.getElementById("typing-text");
+
+const text = textElement.textContent; // Lưu nội dung gốc
+textElement.textContent = ""; // Xóa nội dung ban đầu
+
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        textElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 100); // Điều chỉnh tốc độ gõ từng chữ
+    }
+}
+
+// Gọi hàm để bắt đầu hiệu ứng khi trang tải xong
+window.onload = typeEffect;
+
+// Lấy danh sách khung ảnh
+const imageBoxes = document.querySelectorAll('.image-box');
+
+// Gắn sự kiện toggle animation cho mỗi khung
+imageBoxes.forEach((box) => {
+  const imageList = box.querySelector('.image-list');
+
+  // Gắn sự kiện click
+  box.addEventListener('click', () => {
+    // Nếu đang tạm dừng thì tiếp tục
+    if (imageList.classList.contains('paused')) {
+      imageList.classList.remove('paused');
+    } else {
+      imageList.classList.add('paused');
+    }
+  });
+});

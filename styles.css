@@ -14,17 +14,45 @@
     font-family: 'Arial', 'MS PGothic', sans-serif;
   }
   
-  .container {
-    text-align: center;
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+/* Định dạng khung chứa dễ thương */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffeaf4;
+  border: 4px dashed #f8b1d1;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2; /* Đảm bảo container trên lớp cánh hoa */
+  font-family: 'Comic Sans MS', cursive;
+}
+
+/* Trang trí góc trái trên với trái tim */
+.container::before {
+  content: "💖";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-size: 30px;
+  opacity: 0.8;
+}
+
+/* Trang trí góc phải dưới với ngôi sao */
+.container::after {
+  content: "⭐";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  font-size: 30px;
+  opacity: 0.8;
+}
   
   h1 {
     color: #ff6b6b;
     margin-bottom: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   
   .wish-message {
@@ -61,7 +89,7 @@
   background-size: cover;
   opacity: 0.8;
   animation: fall infinite;
-  pointer-events: none; /* ?? kh?ng c?n tr? khi b?m n?t ho?c v?n b?n */
+  z-index: 1;
 }
 
 @keyframes fall {
@@ -72,5 +100,159 @@
   100% {
     transform: translateX(500vw) rotate(200deg) translateY(1000vh);
     opacity: 0; /* L?m cho c?nh hoa m? d?n khi r?i xu?ng */
+  }
+}
+
+.heart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('heart.png');
+  opacity: 1;
+  animation: fall1 1s ease-in forwards, bounce 0.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Hiệu ứng rơi */
+@keyframes fall1 {
+  0% {
+    transform: translateY(0) rotate(45deg);
+}
+80% {
+    transform: translateY(calc(1000vh - 30px)) rotate(360deg); /* Gần đáy màn hình */
+}
+90% {
+    transform: translateY(calc(200vh - 30px)) rotate(360deg); /* Bật lên một chút */
+}
+100% {
+    transform: translateY(calc(100vh - 30px)) rotate(360deg); /* Quay lại đáy */
+}
+}
+
+/* Hiệu ứng nảy */
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px); /* Nhảy lên một chút */
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/* Định dạng cho lời chúc tiếng Nhật */
+.wish-message {
+  font-size: 1.2em;
+  color: #d84315;
+  margin: 10px 0 20px;
+}
+
+/* Định dạng cho khung thư bên trong */
+.message-box {
+  position: relative;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff9f2;
+  border: 2px solid #ffccbc;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #d84315;
+}
+
+/* Định dạng cho tiêu đề lời chúc */
+.message-box h2 {
+  font-size: 1.5em;
+  color: #ff72a6;
+  margin-bottom: 10px;
+}
+
+/* Định dạng cho nội dung lời chúc */
+.message-box p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+/* Nút xem video dễ thương */
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #ff99c8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #ff72a6;
+}
+
+#music-toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #ff99c8;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Đảm bảo nút nằm trên các phần tử khác */
+}
+
+#music-toggle-button:hover {
+  background-color: #ff72a6;
+}
+
+/* Khung chứa danh sách ảnh cuộn */
+.image-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Khung ảnh */
+.image-box {
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Danh sách ảnh */
+.image-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: scroll 1000s linear infinite;
+  animation-play-state: running; /* Mặc định là đang chạy */
+}
+
+/* Ảnh */
+.image-list img {
+  width: 100%;
+  display: block;
+}
+.image-list.paused {
+  animation-play-state: paused; /* Tạm dừng hiệu ứng */
+}
+/* Hiệu ứng cuộn */
+@keyframes scroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-18650%);
   }
 }
