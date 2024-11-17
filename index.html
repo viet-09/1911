@@ -6,12 +6,12 @@
   <title>Happy Birthday!</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onclick="zz()">
   <!-- Khung chứa danh sách ảnh cuộn -->
   <div class="image-container">
     <!-- Khung ảnh bên trái -->
     <div class="image-box" id="left-box">
-      <div class="image-list" id="left-images">
+      <div class="image-list" id="left-images" onclick="toggleAnimation()">
         <img src="image_0.jpg" alt="Image 0">
         <img src="image_1.jpg" alt="Image 1">
         <img src="image_2.jpg" alt="Image 2">
@@ -304,7 +304,7 @@
   </div>
       <!-- Khung ảnh bên phải -->
       <div class="image-box" id="right-box">
-        <div class="image-list" id="right-images">
+        <div class="image-list" id="right-images" onclick="toggleAnimation()">
           <img src="image_0.jpg" alt="Image 0">
 <img src="image_1.jpg" alt="Image 1">
 <img src="image_2.jpg" alt="Image 2">
@@ -584,7 +584,7 @@
         </div>
       </div>
   <audio id="background-music" src="hbd2.mp3" type="audio/mp3" loop hidden></audio>
-<button id="music-toggle-button" onclick="toggleMusic()">🔊 Bật nhạc</button>
+<button id="music-toggle-button" onclick="toggleMusic()">🔊</button>
   <script src="script.js"></script>
 </body>
 </html>

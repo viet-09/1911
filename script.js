@@ -110,14 +110,6 @@ function toggleMusic() {
     }
 }
 
-// Phát nhạc khi người dùng lần đầu nhấn vào bất kỳ đâu trên trang (nếu cần)
-window.addEventListener('click', () => {
-    if (music.paused) {
-        music.play();
-        toggleButton.textContent = "🔊";
-    }
-}, { once: true });
-
 const textElement = document.getElementById("typing-text");
 
 const text = textElement.textContent; // Lưu nội dung gốc
@@ -136,20 +128,30 @@ function typeEffect() {
 // Gọi hàm để bắt đầu hiệu ứng khi trang tải xong
 window.onload = typeEffect;
 
-// Lấy danh sách khung ảnh
-const imageBoxes = document.querySelectorAll('.image-box');
+// Hàm bắt đầu cuộn
+function toggleAnimation() {
+  const list = document.getElementById("left-images");
+  const list1 = document.getElementById("right-images");
+  if(list.style.animationPlayState == 'running')
+  {
+    list.style.animationPlayState = 'paused';
+    list1.style.animationPlayState = 'paused';
+  }
+  else
+  {
+    list.style.animationPlayState = 'running';
+    list1.style.animationPlayState = 'running';
+  }
+}
 
-// Gắn sự kiện toggle animation cho mỗi khung
-imageBoxes.forEach((box) => {
-  const imageList = box.querySelector('.image-list');
-
-  // Gắn sự kiện click
-  box.addEventListener('click', () => {
-    // Nếu đang tạm dừng thì tiếp tục
-    if (imageList.classList.contains('paused')) {
-      imageList.classList.remove('paused');
-    } else {
-      imageList.classList.add('paused');
-    }
-  });
-});
+function start()
+{
+  const list = document.getElementById("left-images");
+  const list1 = document.getElementById("right-images");
+  list.style.animationPlayState = 'running';
+  list1.style.animationPlayState = 'running';
+}
+function zz()
+{
+  timeout = setTimeout(start, 10000);
+}

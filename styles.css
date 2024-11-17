@@ -16,7 +16,7 @@
   
 /* Định dạng khung chứa dễ thương */
 .container {
-  max-width: 600px;
+  max-width: 50%;
   margin: 20px auto;
   padding: 20px;
   background-color: #ffeaf4;
@@ -111,6 +111,7 @@
   opacity: 1;
   animation: fall1 1s ease-in forwards, bounce 0.5s ease-in-out infinite;
   z-index: 2;
+  pointer-events: none;
 }
 
 /* Hiệu ứng rơi */
@@ -236,7 +237,7 @@ button:hover {
   width: 100%;
   height: 100%;
   animation: scroll 1000s linear infinite;
-  animation-play-state: running; /* Mặc định là đang chạy */
+  animation-play-state: paused; /* Mặc định là đang chạy */
 }
 
 /* Ảnh */
@@ -244,8 +245,8 @@ button:hover {
   width: 100%;
   display: block;
 }
-.image-list.paused {
-  animation-play-state: paused; /* Tạm dừng hiệu ứng */
+.image-list.running {
+  animation-play-state: running; /* Tạm dừng hiệu ứng */
 }
 /* Hiệu ứng cuộn */
 @keyframes scroll {
