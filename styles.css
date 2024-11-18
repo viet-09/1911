@@ -400,3 +400,6 @@ button:hover {
   top: 80%;
   right: 15px;
 }
+.priority-image {
+  display: none; /* Ẩn hình ảnh sau khi tải xong */
+}
