@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday!</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body onclick="zz()">
+<body>
   <!-- Khung chứa danh sách ảnh cuộn -->
-  <div class="image-container">
+    <div class="image-container">
     <!-- Khung ảnh bên trái -->
     <div class="image-box" id="left-box">
       <div class="image-list" id="left-images" onclick="toggleAnimation()">
@@ -292,13 +293,40 @@
     </div>
 
   <div class="container">
-    <h1>Happy birthday TuyếtAnh 🎂</h1>
-    <p class="wish-message">素晴らしい一年になりますように。</p>
+    <div class="envelope-container" onclick="openEnvelope()">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="body">
+          <h2 class="from-text">From: Tạ Quang Việt</h2>
+          <h2 class="to-text">To: Hoàng Tuyết Anh</h2>
+        </div>
+      </div>
+    </div>
+
     <!-- Khung thư chúc mừng sinh nhật bên trong container -->
-    <div class="message-box" >
-        <h2>🎉 Happy Birthday 🎉</h2>
-        <p>Chúc bạn có một ngày sinh nhật thật vui vẻ, đầy ắp niềm vui và những điều tốt đẹp nhất. Mong bạn sẽ luôn hạnh phúc và thành công trong mọi điều!</p>
-        <p>🎂 Hãy tận hưởng ngày tuyệt vời này! 🎂</p>
+    <div class="wavy-text-container">
+      <h1 id="wavy-text" class="hidden">Happy Birthday 🎂</h1>
+    </div>
+    <!-- <h1 style="text-align: center;">Happy Birthday 🎂</h1> -->
+    <div class="message-box hidden">
+        <p class="line"> TuyếtAnh của anh, chúc mừng sinh nhật ❤️</p>
+        <p class="line"> Một dịp thật đặc biệt để nhắn nhủ đôi điều tới yêu của anh he. 😊</p>
+        <p class="line"> Anh yêu TuyếtAnh của anh nhiều lắm, thấy thương cực thương, từng giây từng phút nhìn vào mắt em, cầm tay em, cảm nhận được hơi ấm của em đều khắc sâu trong lòng Việt❤️.</p>
+        <p class="line"> Lần thứ hai Việt có cơ hội gửi lời chúc đến em, mà lần đầu cách đây 6 năm rồi. Nhớ lại thì đầy tiếc nuối, nhưng đẹp lạ em hi. Anh của thời đó, cậu bé chưa trải qua chuyện tình cảm, cũng chưa từng nhận được tình yêu. Nói thật thì, lúc đó anh tìm kiếm group học tập, chủ yếu là để kết bạn, để có thể chia sẻ mọi điều mà không ngại ngùng, người có thể tâm sự và cho lòng mình được an ủi vì gia đình không mấy vui vẻ. Còn về học nhóm thì anh thấy với sức của anh thì sợ ít nhóm phù hợp :V Thế nào anh lại bị hấp dẫn với bài đăng của Hoàng TuyếtAnh, với lời hứa uy tín là nhóm ít người và chất lượng :v Cũng chỉ bằng icon ":v" mà cảm giác nói chuyện với em rất vui vẻ, dễ gần, rất giống với năng lượng của mình.</p>
+        <p class="line"> Chọc cho em chửi, chọc cho em cọc, nhìn em tức điên mà Việt cứ phá ra cười, mỗi ngày mỗi ngày đều rất vui. Rồi tới một hôm, em bị ba la, em khóc nức nở, và gọi cho Việt. Thương lắm, và vì hoàn cảnh hai đứa giống nhau nhiều, nên Việt muốn được che chở cho em, muốn cho em dựa vào, cũng là người để Việt dựa vào. Rồi tình cảm dần đến, yêu thương lần đầu, vô cùng ngây thơ, lần đầu cảm nhận yêu và được yêu thì ra hạnh phúc như vậy. Nhưng rồi anh ở thời điểm đó lại quyết định sai lầm. Giá như lúc đó, được yêu em ở bên ngoài. Giá như lúc đó, anh có thể được ôm em thật nhiều. Giá như có thể nhìn thấy TuyếtAnh năm 17 tuổi bằng da bằng thịt... Quá nhiều sợ sệt, quá nhiều tự ti, để rồi sai lầm. Anh xin lỗi TuyếtAnh, lời xin lỗi anh mang theo suốt bao thời gian qua cuối cùng cũng đã nói ra được. Lời xin lỗi dành cho người luôn tôn trọng anh dù cho anh sai, làm cho anh càng dằn vặt nhiều hơn. Chỉ vì khoảng thời gian cần an ủi ngay lúc đó, mà anh vướng vào rồi suýt nữa mãi mãi cũng không thoát khỏi ra được đoạn tình cảm khiến anh gần như kiệt sức rồi. Cảm giác vô cảm, không còn thấy buồn vui nữa, không có động lực, không thấy hạnh phúc, anh biết tới lúc phải buông bỏ rồi. Anh nhớ tới lần trước, mình cũng từng quyết định dừng lại, anh nghĩ về em, cảm giác có lỗi vẫn mãi dằn vặt anh theo từng ấy năm tháng. Không biết em còn để trong lòng không, có còn nhớ Việt không, do dự nhưng vẫn quyết định liên lạc lại với em🥺.</p>
+        <p class="line"> Và bằng cách nào đó, linh cảm của anh đã đúng. Em đồng ý gặp anh, tôn trọng lắng nghe lời anh chia sẻ, và làm cho tim anh ấm lại lần nữa. Quả thật là ông trời đang giúp anh rồi, cho anh được gần em nhiều, đong đầy nhiều tình cảm với kỉ niệm, cho anh trân trọng hơn cuộc sống ni, thấy tham được hạnh phúc như bao người. Mãi lúc đó anh mới nhận ra anh rời đi đã nợ em rất nhiều. Khoảng thời gian dài để em phải trải qua nhiều buồn hơn, tổn thương hơn, để em không nhận được yêu thương của anh, không được cho em ấm áp suốt thời gian qua. Dù gặp lại em trong lúc khó như bây giờ, dù phải cố gắng gấp ngàn lần để được có lại được yêu, được thương mà đáng ra là của anh, anh vẫn chỉ muốn được hạnh phúc cùng em, được ngắm nhìn em mãi. Anh đến đây rồi, sẽ không để em phải ấm ức buồn lòng nữa, sẽ luôn có một vòng tay ấm áp chờ em về, sẽ luôn có người yêu em thương em đến vô tận, cho em thấy được đồng hành, cho em được làm một đứa trẻ sống trong yêu thương hạnh phúc. Anh muốn sưởi ấm, muốn vỗ về cho em, mỗi ngày mỗi đêm. Anh thương TuyếtAnh của anh nhiều nhiều lắm❤️!</p>
+        <p class="line"> Anh xin lỗi vì những gì em phải trải qua. Anh xin lỗi vì không thể đến sớm hơn. Anh xin lỗi vì mình nhiều lúc vẫn chưa kiểm soát được cảm xúc mà làm em suy nghĩ buồn lòng. Anh xin lỗi vì đã không bình tĩnh mà to tiếng với em, anh xấu hổ, ân hận nhiều lắm. Anh xin lỗi, bây giờ vẫn không có bên cạnh để cho em thật nhiều yêu với thương. Nhưng anh tin rằng, yêu em thương em nhiều như vậy, sẽ có ngày chạm được tới em, để làm cho em hạnh phúc thật nhiều như mình mong. Từng phút từng giây sau này đều muốn bù đắp cho em, muốn làm cho em tự hào, muốn cho em mọi điều em xứng đáng, phải hạnh phúc nhất, xinh đẹp nhất, được nhiều vui sướng nhất trong vòng tay của anh😊.</p>
+        <p class="line"> Hi vọng những hi sinh và cố gắng bỏ ra của chúng mình rồi sẽ kết trái ngọt, sẽ đưa bước chân của hai đứa về cùng nhau để vun vén mái ấm nhỏ đầy hạnh phúc. Anh muốn trao cho em một tình yêu đẹp nhất, trọn vẹn nhất, cho em trở thành người vợ hạnh phúc nhất trên đời. Yêu em lắm, giờ đây mỗi ngày không được ôm, không được hôn, không được thổn thức con tim như lúc ở cạnh em, anh đều hối hận và tiếc nuối, để nhắc bản thân không ngừng cố gắng để bước tới cạnh em. Dù cho em ở đâu trên thế giới này, anh vẫn sẽ tìm thấy em❤️.</p>
+        <p class="line"> Khi yêu của anh đọc những lời này cũng sắp sửa tới thời khắc đón tuổi mới rồi.</p>
+        <p class="line"> Chúc em ngày càng rực sáng hơn, mỗi ngày trôi qua đều hoàn thiện mình, lấp lánh như sao trời✨. </p>
+        <p class="line"> Chúc em làm được mọi điều em mong, hoàn thiện những ước mơ còn đang ấp ủ✨. </p>
+        <p class="line"> Chúc em luôn được vui vẻ, mọi bước chân em đi đều có bóng dáng của anh✨.</p>
+        <p class="line"> Anh xin một lời chúc cuối cùng, dành cho cả anh và em, chúc cho hai đứa sớm về chung một nhà, chỉ mong tới chặng cuối sẽ có nhau❤️. </p>
+        <p class="line"> Anh yêu em, yêu em đến vô cùng, TuyếtAnh của anh. Anh yêu cô gái nhỏ bé nhưng phi thường, luôn đầy nghị lực vươn lên. Bây giờ anh vô cùng trân trọng, và thấy thật may mắn khi được yêu thương em mỗi ngày. Anh hứa sẽ chăm cho đoá hoa này, trở nên thật xinh đẹp và mãi tươi cười hạnh phúc❤️.</p>
+        <br>  
+        <p class="line"> Gửi mọi lời chúc tốt đẹp nhất cho Hoàng TuyếtAnh,</p>
+        <p class="line"> Hẹn gặp lại nhé😊!
+          </p>
     </div>
 
   </div>
