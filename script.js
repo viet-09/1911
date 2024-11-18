@@ -172,7 +172,7 @@ function openEnvelope() {
 
   // Mở nắp bao thư
   envelope.style.transform = 'rotateX(-180deg)';
-  envelope.querySelector('.flap').style.transform = 'rotateX(-180deg)';
+  envelope.querySelector('.flap').style.transform = 'rotateX(-90deg)';
   envelope.style.visibility = 'hidden';
   
   if (messageBox.classList.contains('hidden')) {
