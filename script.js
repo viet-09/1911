@@ -161,7 +161,7 @@ function start()
 }
 function zz()
 {
-  timeout = setTimeout(start, 1000);
+  timeout = setTimeout(start, 6000);
 }
 let index = 0
 const lines = document.querySelectorAll('.line');
