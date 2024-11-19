@@ -156,8 +156,8 @@ function start()
   const list1 = document.getElementById("right-images");
   list.style.visibility = 'visible';
   list1.style.visibility = 'visible';
-  // list.style.animationPlayState = 'running';
-  // list1.style.animationPlayState = 'running';
+  list.style.animationPlayState = 'running';
+  list1.style.animationPlayState = 'running';
 }
 function zz()
 {
